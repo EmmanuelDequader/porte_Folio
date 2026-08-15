@@ -7,7 +7,7 @@ export const translations = {
     nav: {
       home: 'Accueil',
       about: 'À propos',
-      news: 'Actualités (2020-2026)',
+      news: 'Actualités',
       distinctions: 'Distinctions & Leadership',
       projects: 'Projets GitHub',
       skills: 'Compétences',
@@ -21,7 +21,7 @@ export const translations = {
       status: 'Président ALGOTECH · Délégué Informatique (Univ. Dschang)',
       greeting: 'Bonjour, je suis',
       tagline:
-        'Développeur Full-Stack passionné, Président du Club Informatique ALGOTECH et Spécialiste en Communication Digitale & UI/UX Design. Je conçois des solutions numériques à fort impact, de l\'architecture logicielle au marketing.',
+        'Développeur Full-Stack passionné, Président du Club Informatique ALGOTECH, Fondateur d\'Immo D, Co-Administrateur d\'INAF DC, Co-fondateur d\'Edicam et Spécialiste en Communication Digitale & UI/UX Design. Je conçois des solutions numériques à fort impact, de l\'architecture logicielle au marketing.',
       ctaProjects: 'Découvrir mes projets',
       ctaAdvice: 'Conseils aux développeurs',
       ctaCv: 'Télécharger CV',
@@ -30,13 +30,16 @@ export const translations = {
       title: 'À propos de moi',
       subtitle: 'Ingénieur de travaux en Génie Logiciel, créateur de projets et meneur de communauté.',
       paragraphs: [
-        "Étudiant en Génie Logiciel (Licence 3, filière Informatique) à l'Université de Dschang, je combine une solide maîtrise technique (Laravel, Spring Boot, React, Kotlin) avec une vraie sensibilité stratégique et créative (Marketing Digital, Community Management et Design UI/UX).",
+        "Ingénieur de travaux en Génie Logiciel, je combine une solide maîtrise technique (Laravel, Spring Boot, React, Kotlin) avec une vraie sensibilité stratégique et créative (Marketing Digital, Community Management et Design UI/UX).",
         "Fondateur et Président du Club Informatique AlgoTech, Secrétaire Général de l'Association des Étudiants de la Faculté des Sciences (AE-FS) et lauréat du Prix du Meilleur Délégué d'Étudiant de la filière Informatique (2024-2025), j'anime des ateliers de programmation, je coordonne des projets d'équipe et je conçois des applications web et mobiles autonomes du besoin initial jusqu'au déploiement en ligne.",
       ],
       stats: [
         { value: '3+', label: 'ans de projets & freelance' },
-        { value: '8+', label: 'dépôts & applications' },
+        { value: '15+', label: 'dépôts & applications' },
+        { value: 'INAF', label: 'Collaborateur & Administrateur' },
         { value: 'AlgoTech', label: 'Fondateur & Président du club IT' },
+        { value: 'Edicam', label: 'Co-fondateur' },
+        { value: 'Immo D', label: 'Fondateur & PDG' },
         { value: '4 Pôles', label: 'Dev, Mobile, Marketing, Design' },
       ],
     },
@@ -101,7 +104,7 @@ export const translations = {
     nav: {
       home: 'Home',
       about: 'About',
-      news: 'News (2020-2026)',
+      news: 'News',
       distinctions: 'Leadership & Awards',
       projects: 'GitHub Projects',
       skills: 'Skills',
@@ -115,7 +118,7 @@ export const translations = {
       status: 'ALGOTECH President · Computer Science Lead (Univ. of Dschang)',
       greeting: 'Hello, I am',
       tagline:
-        'Passionate Full-Stack Developer, President of ALGOTECH IT Club, and Digital Marketing & UI/UX Specialist. I craft high-impact digital solutions from software architecture to marketing.',
+        'Passionate Full-Stack Developer, President of ALGOTECH IT Club, Founder of Immo D, Co-Administrator of INAF DC, Co-Founder of Edicam, and Digital Marketing & UI/UX Specialist. I craft high-impact digital solutions from software architecture to marketing.',
       ctaProjects: 'Explore my projects',
       ctaAdvice: 'Advice for developers',
       ctaCv: 'Download CV',
@@ -124,13 +127,16 @@ export const translations = {
       title: 'About Me',
       subtitle: 'Software Engineering Graduate, Project Creator, and Community Leader.',
       paragraphs: [
-        "Software Engineering student (3rd year, Computer Science track) at the University of Dschang, I combine strong technical mastery (Laravel, Spring Boot, React, Kotlin) with a creative strategic mindset (Digital Marketing, Community Management, and UI/UX Design).",
+        "Software Engineering Graduate, I combine strong technical mastery (Laravel, Spring Boot, React, Kotlin) with a creative strategic mindset (Digital Marketing, Community Management, and UI/UX Design).",
         "Founder and President of the AlgoTech IT Club, Secretary General of the Faculty of Science Students' Association (AE-FS), and recipient of the Best Student Representative Award in Computer Science (2024-2025), I host programming workshops, lead engineering teams, and build web and mobile apps from concept to cloud deployment.",
       ],
       stats: [
         { value: '3+', label: 'Years of Projects & Freelance' },
-        { value: '8+', label: 'Repositories & Apps' },
+        { value: '15+', label: 'Repositories & Apps' },
+        { value: 'INAF', label: 'Collaborator & Co-Administrator' },
         { value: 'AlgoTech', label: 'Founder & President of the IT Club' },
+        { value: 'Edicam', label: 'Co-Founder' },
+        { value: 'Immo D', label: 'Founder & CEO' },
         { value: '4 Pillars', label: 'Dev, Mobile, Marketing, Design' },
       ],
     },
@@ -439,6 +445,18 @@ export const distinctionsData = [
     issuerFr: 'Institut Professionnel d\'Excellence de Nouvelles Technologies',
     issuerEn: 'Institut Professionnel d\'Excellence de Nouvelles Technologies',
     icon: 'tool',
+  },
+  {
+    id: 'co-fondateur-edicam',
+    titleFr: 'Membre Co-Fondateur — EDICAM (Espoir Dialyse Cameroun)',
+    titleEn: 'Co-Founding Member — EDICAM (Espoir Dialyse Cameroun)',
+    descFr: 'Membre fondateur de l\'association humanitaire EDICAM « Espoir Dialyse Cameroun », dont la mission est de venir en aide aux personnes hémodialysées défavorisées : prise en charge morale et matérielle, accès aux soins, accompagnement de l\'ouverture de centres d\'hémodialyse et prévention de l\'insuffisance rénale. Statuts et Règlement Intérieur adoptés lors de l\'Assemblée Générale Constitutive du 6 août 2026, à Dschang.',
+    descEn: 'Founding member of EDICAM "Espoir Dialyse Cameroun" (Hope Dialysis Cameroon), a humanitarian association supporting underprivileged hemodialysis patients: moral and material care, access to treatment, support for opening dialysis centers, and kidney disease prevention. Statutes and Internal Rules adopted at the Constitutive General Assembly on August 6, 2026, in Dschang.',
+    dateFr: '6 août 2026, Dschang',
+    dateEn: 'August 6, 2026, Dschang',
+    issuerFr: 'Assemblée Générale Constitutive — EDICAM',
+    issuerEn: 'Constitutive General Assembly — EDICAM',
+    icon: 'heart',
   },
 ]
 

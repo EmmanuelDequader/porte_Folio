@@ -1,4 +1,5 @@
 import React from 'react'
+import Reveal from './Reveal'
 import { profileData } from '../data/content'
 
 export default function Hero({ lang, t, onNavigate, onOpenArticle }) {
@@ -11,26 +12,27 @@ export default function Hero({ lang, t, onNavigate, onOpenArticle }) {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Content Column */}
-          <div className="lg:w-7/12 text-center lg:text-left">
+          {/* pr-14 on mobile keeps content clear of the fixed lang/theme buttons at bottom-right */}
+          <div className="lg:w-7/12 text-center lg:text-left pr-14 lg:pr-0">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/80 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-900 dark:text-blue-300 text-xs font-semibold mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <span>{t.hero.status}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
+            <Reveal as="h1" className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
               {t.hero.greeting}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-500">
                 {profileData.name}
               </span>
-            </h1>
+            </Reveal>
 
-            <h2 className="text-lg md:text-xl font-bold text-slate-700 dark:text-slate-300 mb-6">
+            <Reveal as="h2" delay={120} className="text-lg md:text-xl font-bold text-slate-700 dark:text-slate-300 mb-6">
               {title}
-            </h2>
+            </Reveal>
 
-            <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+            <Reveal as="p" delay={240} className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
               {t.hero.tagline}
-            </p>
+            </Reveal>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">

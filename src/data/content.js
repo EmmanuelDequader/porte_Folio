@@ -16,12 +16,14 @@ export const translations = {
       themeLight: 'Mode Clair',
       themeDark: 'Mode Sombre',
       lang: 'EN',
+      groupJourney: 'Parcours',
+      groupOffer: 'Offre',
     },
     hero: {
       status: 'Président ALGOTECH · Délégué Informatique (Univ. Dschang)',
       greeting: 'Bonjour, je suis',
       tagline:
-        'Développeur Full-Stack passionné, Président du Club Informatique ALGOTECH, Fondateur d\'Immo D, Co-Administrateur d\'INAF DC, Co-fondateur d\'Edicam et Spécialiste en Communication Digitale & UI/UX Design. Je conçois des solutions numériques à fort impact, de l\'architecture logicielle au marketing.',
+        'Développeur Full-Stack passionné et spécialiste en Communication Digitale & UI/UX Design, je conçois des solutions numériques à fort impact, de l\'architecture logicielle au marketing digital.',
       ctaProjects: 'Découvrir mes projets',
       ctaAdvice: 'Conseils aux développeurs',
       ctaCv: 'Télécharger CV',
@@ -30,7 +32,7 @@ export const translations = {
       title: 'À propos de moi',
       subtitle: 'Ingénieur de travaux en Génie Logiciel, créateur de projets et meneur de communauté.',
       paragraphs: [
-        "Ingénieur de travaux en Génie Logiciel, je combine une solide maîtrise technique (Laravel, Spring Boot, React, Kotlin) avec une vraie sensibilité stratégique et créative (Marketing Digital, Community Management et Design UI/UX).",
+        "Actuellement étudiant en Master Recherche Intelligence Artificielle à l'Université de Dschang, je combine une solide maîtrise technique (Laravel, Spring Boot, React, Kotlin) avec une vraie sensibilité stratégique et créative (Marketing Digital, Community Management et Design UI/UX).",
         "Fondateur et Président du Club Informatique AlgoTech, Secrétaire Général de l'Association des Étudiants de la Faculté des Sciences (AE-FS) et lauréat du Prix du Meilleur Délégué d'Étudiant de la filière Informatique (2024-2025), j'anime des ateliers de programmation, je coordonne des projets d'équipe et je conçois des applications web et mobiles autonomes du besoin initial jusqu'au déploiement en ligne.",
       ],
       stats: [
@@ -46,6 +48,7 @@ export const translations = {
     distinctions: {
       title: 'Distinctions & Leadership',
       subtitle: 'Des responsabilités et reconnaissances qui témoignent d\'un engagement réel au-delà du code.',
+      viewProof: 'Voir la preuve',
     },
     skills: {
       title: 'Compétences & Expertise',
@@ -55,6 +58,7 @@ export const translations = {
       title: 'Projets & Réalisations GitHub',
       subtitle: 'Découvrez mes dépôts open-source et applications développées sur mesure.',
       viewRepo: 'Voir le dépôt GitHub',
+      viewDemo: 'Voir la démo',
       filterAll: 'Tous',
       privateProject: 'Code source privé',
     },
@@ -67,6 +71,8 @@ export const translations = {
       title: 'Notes de mentorat, jalons & actualités',
       subtitle: 'Retracez mon parcours depuis mes débuts en 2020 jusqu\'à mes réflexions actuelles de 2026.',
       readMore: 'Voir plus',
+      showMore: 'Voir plus d\'actualités',
+      viewSource: 'Voir la publication d\'origine',
       backToNews: 'Retour aux actualités',
       authorTitle: 'Président ALGOTECH & Développeur Full-Stack',
       galleryTitle: 'Galerie de photos & Événements',
@@ -113,12 +119,14 @@ export const translations = {
       themeLight: 'Light Mode',
       themeDark: 'Dark Mode',
       lang: 'FR',
+      groupJourney: 'Journey',
+      groupOffer: 'Offer',
     },
     hero: {
       status: 'ALGOTECH President · Computer Science Lead (Univ. of Dschang)',
       greeting: 'Hello, I am',
       tagline:
-        'Passionate Full-Stack Developer, President of ALGOTECH IT Club, Founder of Immo D, Co-Administrator of INAF DC, Co-Founder of Edicam, and Digital Marketing & UI/UX Specialist. I craft high-impact digital solutions from software architecture to marketing.',
+        'Passionate Full-Stack Developer and Digital Marketing & UI/UX Specialist, I craft high-impact digital solutions from software architecture to digital marketing.',
       ctaProjects: 'Explore my projects',
       ctaAdvice: 'Advice for developers',
       ctaCv: 'Download CV',
@@ -127,7 +135,7 @@ export const translations = {
       title: 'About Me',
       subtitle: 'Software Engineering Graduate, Project Creator, and Community Leader.',
       paragraphs: [
-        "Software Engineering Graduate, I combine strong technical mastery (Laravel, Spring Boot, React, Kotlin) with a creative strategic mindset (Digital Marketing, Community Management, and UI/UX Design).",
+        "Currently pursuing a Research Master's in Artificial Intelligence at the University of Dschang, I combine strong technical mastery (Laravel, Spring Boot, React, Kotlin) with a creative strategic mindset (Digital Marketing, Community Management, and UI/UX Design).",
         "Founder and President of the AlgoTech IT Club, Secretary General of the Faculty of Science Students' Association (AE-FS), and recipient of the Best Student Representative Award in Computer Science (2024-2025), I host programming workshops, lead engineering teams, and build web and mobile apps from concept to cloud deployment.",
       ],
       stats: [
@@ -143,6 +151,7 @@ export const translations = {
     distinctions: {
       title: 'Distinctions & Leadership',
       subtitle: 'Responsibilities and recognitions reflecting genuine engagement beyond code.',
+      viewProof: 'View proof',
     },
     skills: {
       title: 'Skills & Expertise',
@@ -152,6 +161,7 @@ export const translations = {
       title: 'GitHub Projects & Realizations',
       subtitle: 'Explore my open-source repositories and custom built applications.',
       viewRepo: 'View GitHub Repository',
+      viewDemo: 'View demo',
       filterAll: 'All',
       privateProject: 'Private source code',
     },
@@ -164,6 +174,8 @@ export const translations = {
       title: 'Mentoring notes, milestones & updates',
       subtitle: 'Trace my journey from my beginnings in 2020 to my current 2026 reflections.',
       readMore: 'Read more',
+      showMore: 'Show more news',
+      viewSource: 'View original post',
       backToNews: 'Back to news',
       authorTitle: 'ALGOTECH President & Full-Stack Developer',
       galleryTitle: 'Photo Gallery & Events',
@@ -202,8 +214,8 @@ export const translations = {
 export const profileData = {
   name: 'Emmanuel Junior TJADE II',
   nickname: 'Dequader',
-  titleFr: 'Ingénieur de travaux (Licence) · Développeur Full-Stack · Marketeur Digital',
-  titleEn: 'Software Engineering Graduate · Full-Stack Developer · Digital Marketer',
+  titleFr: 'Étudiant en Master Recherche IA (Univ. Dschang) · Ingénieur de travaux · Développeur Full-Stack',
+  titleEn: 'AI Research Master\'s Student (Univ. of Dschang) · Software Engineering Graduate · Full-Stack Developer',
   location: 'Dschang, Cameroun',
   email: 'emmanueljuniordequa2@gmail.com',
   phones: ['+237 690624051', '+237 67837804'],
@@ -215,16 +227,19 @@ export const profileData = {
   ],
 }
 
+// Champ optionnel par compétence : proofUrl (lien vers une preuve : projet, certificat...)
+// et proofLabel (texte du lien affiché au survol). Absent = pas d'icône de preuve affichée.
+// Ex : { name: 'React.js / JavaScript', level: 'Avancé / Advanced', proofUrl: 'https://github.com/EmmanuelDequader/identica-citoyen', proofLabel: 'Voir un projet React' }
 export const skillGroups = [
   {
     categoryFr: 'Développement Full-Stack & Mobile',
     categoryEn: 'Full-Stack & Mobile Development',
     items: [
       { name: 'Laravel (PHP)', level: 'Avancé / Advanced' },
-      { name: 'Spring Boot (Java)', level: 'Avancé / Advanced' },
-      { name: 'React.js / JavaScript', level: 'Avancé / Advanced' },
+      { name: 'Spring Boot (Java)', level: 'Avancé / Advanced', proofUrl: 'https://github.com/EmmanuelDequader/Lovescreen', proofLabel: 'Voir un projet Spring Boot' },
+      { name: 'React.js / JavaScript', level: 'Avancé / Advanced', proofUrl: 'https://github.com/EmmanuelDequader/identica-citoyen', proofLabel: 'Voir un projet React' },
       { name: 'Kotlin (Android Mobile)', level: 'Intermédiaire' },
-      { name: 'Tailwind CSS / HTML5 / CSS3', level: 'Avancé / Advanced' },
+      { name: 'Tailwind CSS / HTML5 / CSS3', level: 'Avancé / Advanced', proofUrl: 'https://github.com/EmmanuelDequader/porte_Folio', proofLabel: 'Voir ce portfolio' },
       { name: 'REST API & PostgreSQL / MySQL', level: 'Avancé / Advanced' },
     ],
   },
@@ -254,16 +269,39 @@ export const skillGroups = [
     categoryFr: 'Outils, Maintenance & Leadership',
     categoryEn: 'Tools, Maintenance & Leadership',
     items: [
-      { name: 'Git & GitHub Workflow', level: 'Avancé / Advanced' },
+      { name: 'Git & GitHub Workflow', level: 'Avancé / Advanced', proofUrl: 'https://github.com/EmmanuelDequader', proofLabel: 'Voir le profil GitHub' },
       { name: 'Maintenance informatique & Vidéosurveillance', level: 'Avancé / Advanced' },
       { name: 'Gestion de projet & Leadership d\'équipe', level: 'Expert' },
       { name: 'Outils bureautiques (Word, Excel, PowerPoint)', level: 'Avancé / Advanced' },
-      { name: 'Permis de conduire catégorie B', level: 'Titulaire / Licensed' },
     ],
   },
 ]
 
 export const realProjects = [
+  {
+    id: 'edicam-site',
+    name: 'EDICAM — edicamer.org',
+    taglineFr: 'Site officiel de l\'association humanitaire EDICAM (Espoir Dialyse Cameroun)',
+    taglineEn: 'Official website of the EDICAM humanitarian association (Espoir Dialyse Cameroun)',
+    descFr: 'Site vitrine de l\'association que j\'ai co-fondée, dédiée à l\'accompagnement des personnes hémodialysées défavorisées au Cameroun : présentation de la mission, des actions de terrain et des moyens de soutenir l\'association. J\'en assure la direction technique et la communication digitale.',
+    descEn: 'Showcase website for the humanitarian association I co-founded, dedicated to supporting underprivileged hemodialysis patients in Cameroon: mission, field initiatives and ways to help. I lead its technical development and digital communication.',
+    tags: ['Site institutionnel', 'Direction technique', 'Communication digitale'],
+    githubUrl: null,
+    demoUrl: 'https://edicamer.org',
+    category: 'Web & Design',
+  },
+  {
+    id: 'inaf-pro',
+    name: 'INAF — Inaf.pro',
+    taglineFr: 'Plateforme numérique d\'INAF, gérée en tant que Community Manager & Développeur',
+    taglineEn: 'INAF digital platform, managed as Community Manager & Developer',
+    descFr: 'Gestion technique du site Inaf.pro et animation de la présence en ligne d\'INAF : mises à jour du site, cohérence éditoriale et engagement de la communauté.',
+    descEn: 'Technical management of the Inaf.pro website and INAF\'s online presence: site updates, editorial consistency and community engagement.',
+    tags: ['Community Management', 'Développement Web', 'Gestion de plateforme'],
+    githubUrl: null,
+    demoUrl: 'https://inaf.pro',
+    category: 'Web & Design',
+  },
   {
     id: 'identica-citoyen',
     name: 'identica-citoyen',
@@ -273,6 +311,7 @@ export const realProjects = [
     descEn: 'Civic web application enabling digitized citizen identification workflows with fluid UX and secure data processing.',
     tags: ['JavaScript', 'React', 'Spring Boot', 'Civic App'],
     githubUrl: 'https://github.com/EmmanuelDequader/identica-citoyen',
+    demoUrl: null,
     category: 'Full-Stack',
   },
   {
@@ -284,6 +323,7 @@ export const realProjects = [
     descEn: 'Java / Android application for dynamic display management, combining Spring Boot backend and responsive front UI.',
     tags: ['Java', 'Spring Boot', 'Android', 'Interactive UI'],
     githubUrl: 'https://github.com/EmmanuelDequader/Lovescreen',
+    demoUrl: null,
     category: 'Java & Mobile',
   },
   {
@@ -295,6 +335,7 @@ export const realProjects = [
     descEn: 'Software graphics application written in Java for animating and rendering interactive GUI elements.',
     tags: ['Java', 'Graphics', 'Algorithms', 'UI/UX'],
     githubUrl: 'https://github.com/EmmanuelDequader/AniDeq',
+    demoUrl: null,
     category: 'Java & Mobile',
   },
   {
@@ -306,6 +347,7 @@ export const realProjects = [
     descEn: 'Designed and built solo in RStudio using the R Shiny framework, this app covers 18-19 statistical tests organized into six categories, with a structured decision framework (ZNRH0) mirroring the methodology taught at university. Demonstrates the ability to turn complex academic content into a usable interactive tool.',
     tags: ['R', 'RStudio', 'R Shiny', 'Data Science', 'Statistiques'],
     githubUrl: 'https://github.com/EmmanuelDequader/LapDeq',
+    demoUrl: null,
     category: 'Data Science',
   },
   {
@@ -317,6 +359,7 @@ export const realProjects = [
     descEn: 'Full-stack Laravel web application for restaurant management (orders, menu, internal operations), with a management interface designed for smooth daily use.',
     tags: ['Laravel', 'PHP', 'MySQL', 'Gestion'],
     githubUrl: null,
+    demoUrl: null,
     category: 'Full-Stack',
   },
   {
@@ -328,6 +371,7 @@ export const realProjects = [
     descEn: 'Android mobile app for browsing and collecting anime, integrating the TMDB API for data and a polished user interface.',
     tags: ['Android', 'Java/Kotlin', 'API TMDB', 'Mobile'],
     githubUrl: null,
+    demoUrl: null,
     category: 'Java & Mobile',
   },
   {
@@ -339,6 +383,7 @@ export const realProjects = [
     descEn: 'Design and engineering of a responsive showcase site using HTML5/CSS3/JS with modern visual branding.',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive'],
     githubUrl: 'https://github.com/EmmanuelDequader/site-vitrine',
+    demoUrl: null,
     category: 'Web & Design',
   },
   {
@@ -350,6 +395,7 @@ export const realProjects = [
     descEn: 'Web utility designed for formatting academic grades and structured tables using advanced CSS.',
     tags: ['HTML', 'CSS', 'Academic Tool', 'Layout'],
     githubUrl: 'https://github.com/EmmanuelDequader/Releve_de_notes',
+    demoUrl: null,
     category: 'Web & Design',
   },
 ]
@@ -397,6 +443,7 @@ export const distinctionsData = [
     issuerFr: 'Pr MOFOR née TEUGWA Clautilde, Doyen de la Faculté des Sciences',
     issuerEn: 'Prof. MOFOR née TEUGWA Clautilde, Dean of the Faculty of Science',
     icon: 'award',
+    proofUrl: null,
   },
   {
     id: 'attestation-leadership',
@@ -409,6 +456,7 @@ export const distinctionsData = [
     issuerFr: 'Pr MOFOR née TEUGWA Clautilde, Doyen de la Faculté des Sciences',
     issuerEn: 'Prof. MOFOR née TEUGWA Clautilde, Dean of the Faculty of Science',
     icon: 'certificate',
+    proofUrl: null,
   },
   {
     id: 'fondation-algotech',
@@ -421,6 +469,7 @@ export const distinctionsData = [
     issuerFr: 'Pr NKENLIFACK Marcelin & Pr MOFOR née TEUGWA Clautilde, Doyen de la Faculté des Sciences',
     issuerEn: 'Prof. NKENLIFACK Marcelin & Prof. MOFOR née TEUGWA Clautilde, Dean of the Faculty of Science',
     icon: 'users',
+    proofUrl: null,
   },
   {
     id: 'sg-ae-fs',
@@ -433,6 +482,7 @@ export const distinctionsData = [
     issuerFr: 'AE-FS — Université de Dschang',
     issuerEn: 'AE-FS — University of Dschang',
     icon: 'briefcase',
+    proofUrl: null,
   },
   {
     id: 'maintenance-videosurveillance',
@@ -445,6 +495,7 @@ export const distinctionsData = [
     issuerFr: 'Institut Professionnel d\'Excellence de Nouvelles Technologies',
     issuerEn: 'Institut Professionnel d\'Excellence de Nouvelles Technologies',
     icon: 'tool',
+    proofUrl: null,
   },
   {
     id: 'co-fondateur-edicam',
@@ -457,16 +508,21 @@ export const distinctionsData = [
     issuerFr: 'Assemblée Générale Constitutive — EDICAM',
     issuerEn: 'Constitutive General Assembly — EDICAM',
     icon: 'heart',
+    proofUrl: null,
   },
 ]
 
 // ─────────────────────────────────────────────────────────
 // TIMELINE NEWS ARTICLES (2020 - 2026)
+// Champ optionnel par article : sourceUrl (lien vers la publication d'origine,
+// ex: post LinkedIn) si l'article republie un contenu déjà publié ailleurs.
+// Absent ou null = pas de lien "voir la publication d'origine" affiché.
 // ─────────────────────────────────────────────────────────
 
 export const newsArticlesTimeline = [
   {
     id: 'advice-to-young-developers-2026',
+    sourceUrl: null,
     year: '2026',
     dateFr: '12 Août 2026',
     dateEn: 'August 12, 2026',

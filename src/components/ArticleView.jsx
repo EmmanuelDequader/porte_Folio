@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { ExternalLink } from 'lucide-react'
 import ImageLightbox from './ImageLightbox'
 
 export default function ArticleView({ article, lang, t, onBack }) {
@@ -263,6 +264,18 @@ export default function ArticleView({ article, lang, t, onBack }) {
           </svg>
           {t.news.backToNews}
         </button>
+
+        {article.sourceUrl && (
+          <a
+            href={article.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+            {t.news.viewSource}
+          </a>
+        )}
       </div>
 
       {/* Lightbox Modal */}

@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Reveal from './Reveal'
 
 export default function NewsSection({ articles, lang, t, onSelectArticle }) {
+  const [showAll, setShowAll] = useState(false)
+
   if (!articles || articles.length === 0) return null
+
+  const visibleArticles = showAll ? articles : articles.slice(0, 3)
 
   return (
     <section id="news" className="py-16 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-12" as="div">
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/40 px-3.5 py-1.5 rounded-full">
               {t.news.badge}
@@ -19,11 +24,11 @@ export default function NewsSection({ articles, lang, t, onSelectArticle }) {
           <p className="text-slate-600 dark:text-slate-400 max-w-md mt-4 md:mt-0 text-sm md:text-base">
             {t.news.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Timeline Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((art) => {
+          {visibleArticles.map((art, idx) => {
             const title = lang === 'fr' ? art.titleFr : art.titleEn
             const lead = lang === 'fr' ? art.leadFr : art.leadEn
             const category = lang === 'fr' ? art.categoryFr : art.categoryEn
@@ -31,10 +36,10 @@ export default function NewsSection({ articles, lang, t, onSelectArticle }) {
             const readTime = lang === 'fr' ? art.readTimeFr : art.readTimeEn
 
             return (
+              <Reveal key={art.id} delay={(idx % 3) * 100} className="h-full">
               <article
-                key={art.id}
                 onClick={() => onSelectArticle(art)}
-                className="group bg-slate-50 dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                className="h-full group bg-slate-50 dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
                 <div>
                   {/* Hero Banner with Year Badge */}
@@ -97,9 +102,21 @@ export default function NewsSection({ articles, lang, t, onSelectArticle }) {
                   </button>
                 </div>
               </article>
+              </Reveal>
             )
           })}
         </div>
+
+        {!showAll && articles.length > 3 && (
+          <div className="text-center mt-10">
+            <button
+              onClick={() => setShowAll(true)}
+              className="px-6 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            >
+              {t.news.showMore}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

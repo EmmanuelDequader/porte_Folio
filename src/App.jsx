@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Routes, Route, useNavigate, useParams, useLocation, Navigate } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -11,50 +11,91 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import SectionTabGroup from './components/SectionTabGroup'
+import FloatingControls from './components/FloatingControls'
 import { translations, newsArticlesTimeline } from './data/content'
+
+const JOURNEY_TAB_IDS = ['news', 'distinctions']
+const OFFER_TAB_IDS = ['services', 'skills', 'projects']
 
 function HomePage({ lang, t, activeSection, setActiveSection, onOpenArticle }) {
   const navigate = useNavigate()
   const location = useLocation()
+  const isFirstRender = useRef(true)
 
+  // Handle deep-link scroll target coming from another route (e.g. back from an article)
   useEffect(() => {
     const targetId = location.state && location.state.scrollTo
     if (targetId) {
-      const el = document.getElementById(targetId)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
+      setActiveSection(targetId)
       navigate(location.pathname, { replace: true, state: {} })
     }
-  }, [location, navigate])
+  }, [location, navigate, setActiveSection])
+
+  // Single place that scrolls to the active section, always after the
+  // matching tab (if any) has already switched in the same render.
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    const el = document.getElementById(activeSection)
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }, [activeSection])
+
+  const parcoursTab = JOURNEY_TAB_IDS.includes(activeSection) ? activeSection : 'news'
+  const offreTab = OFFER_TAB_IDS.includes(activeSection) ? activeSection : 'services'
 
   return (
     <>
-      <Hero
-        lang={lang}
-        t={t}
-        onNavigate={(section) => {
-          setActiveSection(section)
-          const el = document.getElementById(section)
-          if (el) el.scrollIntoView({ behavior: 'smooth' })
-        }}
-        onOpenArticle={onOpenArticle}
-      />
+      <Hero lang={lang} t={t} onNavigate={setActiveSection} onOpenArticle={onOpenArticle} />
 
       <About t={t} />
 
-      <NewsSection
-        articles={newsArticlesTimeline}
-        lang={lang}
-        t={t}
-        onSelectArticle={(art) => navigate(`/actualites/${art.id}`)}
-      />
+      {/* Parcours : Actualités & Distinctions regroupées sous onglets */}
+      <div className="py-4">
+        <SectionTabGroup
+          tabs={[
+            { id: 'news', label: t.nav.news },
+            { id: 'distinctions', label: t.nav.distinctions },
+          ]}
+          activeId={parcoursTab}
+          onTabChange={setActiveSection}
+        />
+        <div className={parcoursTab === 'news' ? 'block' : 'hidden'}>
+          <NewsSection
+            articles={newsArticlesTimeline}
+            lang={lang}
+            t={t}
+            onSelectArticle={(art) => navigate(`/actualites/${art.id}`)}
+          />
+        </div>
+        <div className={parcoursTab === 'distinctions' ? 'block' : 'hidden'}>
+          <Distinctions lang={lang} t={t} />
+        </div>
+      </div>
 
-      <Distinctions lang={lang} t={t} />
-
-      <ServicesSection lang={lang} t={t} />
-
-      <Skills lang={lang} t={t} />
-
-      <Projects lang={lang} t={t} />
+      {/* Offre : Services, Compétences & Projets regroupés sous onglets */}
+      <div className="py-4">
+        <SectionTabGroup
+          tabs={[
+            { id: 'services', label: t.nav.services },
+            { id: 'skills', label: t.nav.skills },
+            { id: 'projects', label: t.nav.projects },
+          ]}
+          activeId={offreTab}
+          onTabChange={setActiveSection}
+        />
+        <div className={offreTab === 'services' ? 'block' : 'hidden'}>
+          <ServicesSection lang={lang} t={t} />
+        </div>
+        <div className={offreTab === 'skills' ? 'block' : 'hidden'}>
+          <Skills lang={lang} t={t} />
+        </div>
+        <div className={offreTab === 'projects' ? 'block' : 'hidden'}>
+          <Projects lang={lang} t={t} />
+        </div>
+      </div>
 
       <Contact lang={lang} t={t} />
     </>
@@ -108,24 +149,19 @@ export default function App() {
       navigate('/', { state: { scrollTo: sectionId } })
     } else {
       setActiveSection(sectionId)
-      const el = document.getElementById(sectionId)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
       <Header
-        lang={lang}
-        setLang={setLang}
-        isDark={isDark}
-        setIsDark={setIsDark}
         t={t}
         activeSection={activeSection}
-        setActiveSection={setActiveSection}
         onNavClick={handleNavClick}
         isArticlePage={location.pathname !== '/'}
       />
+
+      <FloatingControls lang={lang} setLang={setLang} isDark={isDark} setIsDark={setIsDark} t={t} />
 
       <main>
         <Routes>

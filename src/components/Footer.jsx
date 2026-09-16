@@ -3,8 +3,8 @@ import { profileData } from '../data/content'
 
 export default function Footer({ t }) {
   return (
-    <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm font-sans">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="bg-slate-950 text-slate-400 py-12 pb-24 md:pb-12 border-t border-slate-800 text-sm font-sans">
+      <div className="max-w-7xl mx-auto px-4 md:pr-24 flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <div className="text-white font-extrabold text-lg tracking-wider uppercase">
             {profileData.name} ({profileData.nickname})

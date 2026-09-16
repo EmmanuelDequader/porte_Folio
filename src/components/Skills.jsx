@@ -1,29 +1,29 @@
 import React from 'react'
+import { ExternalLink } from 'lucide-react'
+import Reveal from './Reveal'
 import { skillGroups } from '../data/content'
 
 export default function Skills({ lang, t }) {
   return (
     <section id="skills" className="py-16 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/40 px-3 py-1 rounded-full">
-            {t.skills.title}
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
             {t.skills.title}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg">
             {t.skills.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillGroups.map((group, idx) => {
             const category = lang === 'fr' ? group.categoryFr : group.categoryEn
 
             return (
-              <div
+              <Reveal
                 key={idx}
+                delay={idx * 100}
                 className="bg-slate-50 dark:bg-slate-800/60 p-6 md:p-8 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm"
               >
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200 dark:border-slate-700/60">
@@ -41,13 +41,26 @@ export default function Skills({ lang, t }) {
                       <span className="text-slate-800 dark:text-slate-200 font-medium text-sm md:text-base">
                         {item.name}
                       </span>
-                      <span className="text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/40 px-2.5 py-1 rounded-md">
-                        {item.level}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/40 px-2.5 py-1 rounded-md">
+                          {item.level}
+                        </span>
+                        {item.proofUrl && (
+                          <a
+                            href={item.proofUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={item.proofLabel || 'Voir une preuve'}
+                            className="text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                          >
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
-              </div>
+              </Reveal>
             )
           })}
         </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Reveal from './Reveal'
 import { servicesData } from '../data/content'
 
 export default function ServicesSection({ lang, t }) {
@@ -34,17 +35,14 @@ export default function ServicesSection({ lang, t }) {
   return (
     <section id="services" className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/40 px-3 py-1 rounded-full">
-            {t.services.title}
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
             {t.services.title}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg">
             {t.services.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {servicesData.map((serv, idx) => {
@@ -52,8 +50,9 @@ export default function ServicesSection({ lang, t }) {
             const desc = lang === 'fr' ? serv.descFr : serv.descEn
 
             return (
-              <div
+              <Reveal
                 key={idx}
+                delay={idx * 100}
                 className="p-8 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -65,7 +64,7 @@ export default function ServicesSection({ lang, t }) {
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">
                   {desc}
                 </p>
-              </div>
+              </Reveal>
             )
           })}
         </div>

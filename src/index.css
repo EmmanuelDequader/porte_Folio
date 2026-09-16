@@ -41,6 +41,18 @@ html {
   animation: slideDown 0.3s ease-out forwards;
 }
 
+/* Effet d'apparition du texte au défilement (voir src/components/Reveal.jsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Respecte les préférences de mouvement réduit */
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Reveal from './Reveal'
 import { profileData } from '../data/content'
 
 export default function Contact({ lang, t }) {
@@ -24,7 +25,7 @@ export default function Contact({ lang, t }) {
   return (
     <section id="contact" className="py-16 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/40 px-3 py-1 rounded-full">
             {t.contact.badge}
           </span>
@@ -34,7 +35,7 @@ export default function Contact({ lang, t }) {
           <p className="text-slate-600 dark:text-slate-400 text-lg">
             {t.contact.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Details */}

@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import {
+  Menu,
+  X,
+  Home,
+  User,
+  Newspaper,
+  Award,
+  FolderGit2,
+  Wrench,
+  Briefcase,
+  Mail,
+} from 'lucide-react'
 
-export default function Header({
-  lang,
-  setLang,
-  isDark,
-  setIsDark,
-  t,
-  activeSection,
-  onNavClick,
-  isArticlePage,
-}) {
+export default function Header({ t, activeSection, onNavClick, isArticlePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -21,16 +24,21 @@ export default function Header({
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { id: 'hero', label: t.nav.home },
-    { id: 'about', label: t.nav.about },
-    { id: 'news', label: t.nav.news },
-    { id: 'distinctions', label: t.nav.distinctions },
-    { id: 'projects', label: t.nav.projects },
-    { id: 'skills', label: t.nav.skills },
-    { id: 'services', label: t.nav.services },
-    { id: 'contact', label: t.nav.contact },
+  const journeyItems = [
+    { id: 'hero', label: t.nav.home, icon: Home },
+    { id: 'about', label: t.nav.about, icon: User },
+    { id: 'news', label: t.nav.news, icon: Newspaper },
+    { id: 'distinctions', label: t.nav.distinctions, icon: Award },
   ]
+
+  const offerItems = [
+    { id: 'projects', label: t.nav.projects, icon: FolderGit2 },
+    { id: 'skills', label: t.nav.skills, icon: Wrench },
+    { id: 'services', label: t.nav.services, icon: Briefcase },
+    { id: 'contact', label: t.nav.contact, icon: Mail },
+  ]
+
+  const navItems = [...journeyItems, ...offerItems]
 
   const handleNavClick = (id) => {
     setMobileMenuOpen(false)
@@ -84,76 +92,58 @@ export default function Header({
           ))}
         </nav>
 
-        {/* Action Controls */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* Language Switcher Toggle */}
-          <button
-            onClick={() => setLang(lang === 'fr' ? 'en' : 'fr')}
-            className="px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/60 border border-blue-200 dark:border-blue-800 text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm"
-            aria-label="Changer la langue / Switch language"
-            title="Changer de langue (FR / EN)"
-          >
-            <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-            <span>{lang === 'fr' ? '🇫🇷 FR | EN' : '🇬🇧 EN | FR'}</span>
-          </button>
-
-          {/* Explicit Theme Toggle Button */}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 text-xs font-bold transition-all flex items-center gap-2 shadow-sm"
-            aria-label="Basculer le thème"
-            title="Changer le mode d'affichage"
-          >
-            {isDark ? (
-              <>
-                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-                <span>{t.nav.themeLight}</span>
-              </>
-            ) : (
-              <>
-                <svg className="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-                <span>{t.nav.themeDark}</span>
-              </>
-            )}
-          </button>
-
-          {/* Mobile Drawer Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-            aria-label="Menu"
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
+        {/* Mobile Drawer Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shrink-0"
+          aria-label="Menu"
+        >
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-2 animate-slideDown">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              className={`w-full text-left px-4 py-3 text-sm font-semibold rounded-xl transition-colors ${
-                activeSection === item.id && !isArticlePage
-                  ? 'bg-blue-600 text-white'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
+        <div className="lg:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 px-4 py-4 animate-slideDown">
+          <p className="px-4 pt-1 pb-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            {t.nav.groupJourney}
+          </p>
+          <div className="space-y-1">
+            {journeyItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className={`w-full text-left px-4 py-3 text-sm font-semibold rounded-xl transition-colors flex items-center gap-3 ${
+                  activeSection === item.id && !isArticlePage
+                    ? 'bg-blue-600 text-white'
+                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900'
+                }`}
+              >
+                <item.icon className="w-4 h-4 shrink-0" />
+                <span>{item.label}</span>
+              </button>
+            ))}
+          </div>
+
+          <p className="px-4 pt-4 pb-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            {t.nav.groupOffer}
+          </p>
+          <div className="space-y-1">
+            {offerItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className={`w-full text-left px-4 py-3 text-sm font-semibold rounded-xl transition-colors flex items-center gap-3 ${
+                  activeSection === item.id && !isArticlePage
+                    ? 'bg-blue-600 text-white'
+                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900'
+                }`}
+              >
+                <item.icon className="w-4 h-4 shrink-0" />
+                <span>{item.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </header>

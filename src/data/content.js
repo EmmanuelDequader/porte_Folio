@@ -40,6 +40,7 @@ export const translations = {
         { value: '15+', label: 'dépôts & applications' },
         { value: 'INAF', label: 'Collaborateur & Administrateur' },
         { value: 'AlgoTech', label: 'Fondateur & Président du club IT' },
+        { value: 'Tchopla', label: 'Fondateur — SaaS multi-restaurants' },
         { value: 'Edicam', label: 'Co-fondateur' },
         { value: 'Immo D', label: 'Fondateur & PDG' },
         { value: '4 Pôles', label: 'Dev, Mobile, Marketing, Design' },
@@ -143,6 +144,7 @@ export const translations = {
         { value: '15+', label: 'Repositories & Apps' },
         { value: 'INAF', label: 'Collaborator & Co-Administrator' },
         { value: 'AlgoTech', label: 'Founder & President of the IT Club' },
+        { value: 'Tchopla', label: 'Founder — Multi-restaurant SaaS' },
         { value: 'Edicam', label: 'Co-Founder' },
         { value: 'Immo D', label: 'Founder & CEO' },
         { value: '4 Pillars', label: 'Dev, Mobile, Marketing, Design' },
@@ -278,6 +280,18 @@ export const skillGroups = [
 ]
 
 export const realProjects = [
+  {
+    id: 'tchopla',
+    name: 'Tchopla — tchopla.cm',
+    taglineFr: 'Plateforme SaaS multi-restaurants de commande en ligne, en production au Cameroun',
+    taglineEn: 'Multi-restaurant SaaS ordering platform, live in Cameroon',
+    descFr: 'Plateforme que je conçois et exploite de bout en bout : les clients commandent depuis un portail web installable, les restaurants pilotent leur carte, leurs commandes et leur caisse depuis un back-office temps réel, et l\'administration supervise la plateforme. Trois applications distinctes servies par une API Spring Boot unique, avec isolation stricte des données de chaque restaurant au niveau de la base (Row Level Security PostgreSQL), paiement mobile money, reçus signés vérifiables, notifications temps réel et déploiement continu automatisé.',
+    descEn: 'A platform I design and operate end to end: customers order through an installable web portal, restaurants manage their menu, orders and takings from a real-time back office, and administrators oversee the platform. Three separate applications served by a single Spring Boot API, with each restaurant\'s data isolated at the database level (PostgreSQL Row Level Security), mobile money payments, verifiable signed receipts, real-time notifications and automated continuous deployment.',
+    tags: ['Spring Boot', 'Next.js', 'PostgreSQL', 'PWA', 'SaaS multi-tenant', 'Mobile Money'],
+    githubUrl: null,
+    demoUrl: 'https://tchopla.cm',
+    category: 'Web & Design',
+  },
   {
     id: 'edicam-site',
     name: 'EDICAM — edicamer.org',
@@ -431,7 +445,34 @@ export const servicesData = [
   },
 ]
 
+// Trié du plus récent au plus ancien pour lire comme un parcours chronologique.
 export const distinctionsData = [
+  {
+    id: 'co-fondateur-edicam',
+    titleFr: 'Membre Co-Fondateur — EDICAM (Espoir Dialyse Cameroun)',
+    titleEn: 'Co-Founding Member — EDICAM (Espoir Dialyse Cameroun)',
+    descFr: 'Membre fondateur de l\'association humanitaire EDICAM « Espoir Dialyse Cameroun », dont la mission est de venir en aide aux personnes hémodialysées défavorisées : prise en charge morale et matérielle, accès aux soins, accompagnement de l\'ouverture de centres d\'hémodialyse et prévention de l\'insuffisance rénale. Statuts et Règlement Intérieur adoptés lors de l\'Assemblée Générale Constitutive du 6 août 2026, à Dschang.',
+    descEn: 'Founding member of EDICAM "Espoir Dialyse Cameroun" (Hope Dialysis Cameroon), a humanitarian association supporting underprivileged hemodialysis patients: moral and material care, access to treatment, support for opening dialysis centers, and kidney disease prevention. Statutes and Internal Rules adopted at the Constitutive General Assembly on August 6, 2026, in Dschang.',
+    dateFr: '6 août 2026, Dschang',
+    dateEn: 'August 6, 2026, Dschang',
+    issuerFr: 'Assemblée Générale Constitutive — EDICAM',
+    issuerEn: 'Constitutive General Assembly — EDICAM',
+    icon: 'heart',
+    proofUrl: null,
+  },
+  {
+    id: 'fondation-algotech',
+    titleFr: 'Fondation & Présidence du Club AlgoTech + Conférence ALGOTECH',
+    titleEn: 'Founding & Presidency of the AlgoTech Club + ALGOTECH Conference',
+    descFr: 'Fondateur et Président du Club AlgoTech, club de génie logiciel officiel du Département de Mathématiques-Informatique (statuts, règlement intérieur, identité visuelle et supports d\'événement). Organisateur de la Conférence ALGOTECH « Artificial Intelligence and Cyber Security: Pillars of young and sustainable Entrepreneurship » et du Hackathon on Problem Solving through Pentests.',
+    descEn: 'Founder and President of the AlgoTech Club, the official software engineering club of the Mathematics-Computer Science Department (statutes, internal rules, visual identity and event materials). Organizer of the ALGOTECH Conference "Artificial Intelligence and Cyber Security: Pillars of young and sustainable Entrepreneurship" and the Hackathon on Problem Solving through Pentests.',
+    dateFr: '29 mai 2026, Université de Dschang',
+    dateEn: 'May 29, 2026, University of Dschang',
+    issuerFr: 'Pr NKENLIFACK Marcelin & Pr MOFOR née TEUGWA Clautilde, Doyen de la Faculté des Sciences',
+    issuerEn: 'Prof. NKENLIFACK Marcelin & Prof. MOFOR née TEUGWA Clautilde, Dean of the Faculty of Science',
+    icon: 'users',
+    proofUrl: null,
+  },
   {
     id: 'prix-meilleur-delegue',
     titleFr: 'Prix du Meilleur Délégué d\'Étudiant — Filière Informatique',
@@ -459,19 +500,6 @@ export const distinctionsData = [
     proofUrl: null,
   },
   {
-    id: 'fondation-algotech',
-    titleFr: 'Fondation & Présidence du Club AlgoTech + Conférence ALGOTECH',
-    titleEn: 'Founding & Presidency of the AlgoTech Club + ALGOTECH Conference',
-    descFr: 'Fondateur et Président du Club AlgoTech, club de génie logiciel officiel du Département de Mathématiques-Informatique (statuts, règlement intérieur, identité visuelle et supports d\'événement). Organisateur de la Conférence ALGOTECH « Artificial Intelligence and Cyber Security: Pillars of young and sustainable Entrepreneurship » et du Hackathon on Problem Solving through Pentests.',
-    descEn: 'Founder and President of the AlgoTech Club, the official software engineering club of the Mathematics-Computer Science Department (statutes, internal rules, visual identity and event materials). Organizer of the ALGOTECH Conference "Artificial Intelligence and Cyber Security: Pillars of young and sustainable Entrepreneurship" and the Hackathon on Problem Solving through Pentests.',
-    dateFr: '29 mai 2026, Université de Dschang',
-    dateEn: 'May 29, 2026, University of Dschang',
-    issuerFr: 'Pr NKENLIFACK Marcelin & Pr MOFOR née TEUGWA Clautilde, Doyen de la Faculté des Sciences',
-    issuerEn: 'Prof. NKENLIFACK Marcelin & Prof. MOFOR née TEUGWA Clautilde, Dean of the Faculty of Science',
-    icon: 'users',
-    proofUrl: null,
-  },
-  {
     id: 'sg-ae-fs',
     titleFr: 'Secrétaire Général — AE-FS',
     titleEn: 'Secretary General — AE-FS',
@@ -495,19 +523,6 @@ export const distinctionsData = [
     issuerFr: 'Institut Professionnel d\'Excellence de Nouvelles Technologies',
     issuerEn: 'Institut Professionnel d\'Excellence de Nouvelles Technologies',
     icon: 'tool',
-    proofUrl: null,
-  },
-  {
-    id: 'co-fondateur-edicam',
-    titleFr: 'Membre Co-Fondateur — EDICAM (Espoir Dialyse Cameroun)',
-    titleEn: 'Co-Founding Member — EDICAM (Espoir Dialyse Cameroun)',
-    descFr: 'Membre fondateur de l\'association humanitaire EDICAM « Espoir Dialyse Cameroun », dont la mission est de venir en aide aux personnes hémodialysées défavorisées : prise en charge morale et matérielle, accès aux soins, accompagnement de l\'ouverture de centres d\'hémodialyse et prévention de l\'insuffisance rénale. Statuts et Règlement Intérieur adoptés lors de l\'Assemblée Générale Constitutive du 6 août 2026, à Dschang.',
-    descEn: 'Founding member of EDICAM "Espoir Dialyse Cameroun" (Hope Dialysis Cameroon), a humanitarian association supporting underprivileged hemodialysis patients: moral and material care, access to treatment, support for opening dialysis centers, and kidney disease prevention. Statutes and Internal Rules adopted at the Constitutive General Assembly on August 6, 2026, in Dschang.',
-    dateFr: '6 août 2026, Dschang',
-    dateEn: 'August 6, 2026, Dschang',
-    issuerFr: 'Assemblée Générale Constitutive — EDICAM',
-    issuerEn: 'Constitutive General Assembly — EDICAM',
-    icon: 'heart',
     proofUrl: null,
   },
 ]
